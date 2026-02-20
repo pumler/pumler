@@ -49,6 +49,17 @@ jobs:
             cp -a "${source_root}/${relpath}" "${relpath}"
           done < <(git -C "${source_root}" ls-files -z)
 
+          # Build org profile README from source README with fixed asset links.
+          if [ -f "README.md" ]; then
+            mkdir -p "profile"
+            cp "README.md" "profile/README.md"
+            # profile/README.md lives one level deeper than repo root.
+            perl -0pi -e 's/\]\((docs\/[^)]+)\)/](..\/$1)/g' "profile/README.md"
+          else
+            echo "README.md not found in source mirror payload."
+            exit 1
+          fi
+
           # Prevent recursive runs if this workflow lands in the mirrored repo.
           rm -f ".github/workflows/mirror-to-org-dot-github.yml"
 
