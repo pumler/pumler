@@ -1,0 +1,64 @@
+name: Mirror To pumler/.github
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Mirror tracked files to pumler/.github
+        env:
+          TARGET_REPO: pumler/.github
+          TARGET_BRANCH: main
+          TARGET_TOKEN: ${{ secrets.PUMLER_DOT_GITHUB_MIRROR_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${TARGET_TOKEN:-}" ]; then
+            echo "Missing secret: PUMLER_DOT_GITHUB_MIRROR_TOKEN"
+            exit 1
+          fi
+
+          target_dir="$(mktemp -d)"
+          trap 'rm -rf "$target_dir"' EXIT
+
+          git clone "https://x-access-token:${TARGET_TOKEN}@github.com/${TARGET_REPO}.git" "$target_dir"
+          cd "$target_dir"
+
+          git checkout "${TARGET_BRANCH}" || git checkout -b "${TARGET_BRANCH}"
+
+          # Clean target worktree (keep only git metadata).
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+
+          # Copy tracked files from the source commit to target.
+          source_root="${GITHUB_WORKSPACE}"
+          while IFS= read -r -d '' relpath; do
+            mkdir -p "$(dirname "$relpath")"
+            cp -a "${source_root}/${relpath}" "${relpath}"
+          done < <(git -C "${source_root}" ls-files -z)
+
+          # Prevent recursive runs if this workflow lands in the mirrored repo.
+          rm -f ".github/workflows/mirror-to-org-dot-github.yml"
+
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to mirror."
+            exit 0
+          fi
+
+          git config user.name "pumler-mirror-bot"
+          git config user.email "pumler-mirror-bot@users.noreply.github.com"
+          git commit -m "Mirror ${GITHUB_REPOSITORY}@${GITHUB_SHA}"
+          git push origin "${TARGET_BRANCH}"
