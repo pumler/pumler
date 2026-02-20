@@ -277,6 +277,33 @@ h3 {
   gap: 14px;
 }
 
+.faq-list {
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+.faq-item {
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faq-item dt {
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.faq-item dd {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
 .card {
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -354,5 +381,9 @@ h3 {
 
   .feature-content h3 {
     font-size: 22px;
+  }
+
+  .faq-item dt {
+    font-size: 20px;
   }
 }
