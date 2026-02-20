@@ -6,11 +6,11 @@
     <title>Pumler | Collaborative PlantUML and Structurizr Online Editor</title>
     <meta
       name="description"
-      content="Pumler is a real-time collaborative text-to-diagram editor for PlantUML and Structurizr (C4). Create sequence diagrams online, edit C4 models, and share architecture diagrams faster."
+      content="Pumler is a real-time collaborative text-to-diagram editor for PlantUML and Structurizr. Create sequence diagrams online, edit C4 models, and export high-resolution diagrams faster."
     />
     <meta
       name="keywords"
-      content="plantuml online editor, structurizr online editor, c4 model online editor, sequence diagram online, collaborative diagram editor, text to diagram"
+      content="plantuml online editor, structurizr online editor, c4 model online editor, sequence diagram online, collaborative diagram editor, diagram export png svg"
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://pumler.github.io/pumler/" />
@@ -22,15 +22,15 @@
       content="Real-time collaborative text-to-diagram editor for PlantUML and Structurizr."
     />
     <meta property="og:url" content="https://pumler.github.io/pumler/" />
-    <meta property="og:image" content="https://pumler.github.io/pumler/assets/images/pumler-editor-dark.png" />
+    <meta property="og:image" content="https://pumler.github.io/pumler/assets/images/pumler-editor-light.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pumler | Collaborative PlantUML and Structurizr Online Editor" />
     <meta
       name="twitter:description"
-      content="Online diagram editor with live preview, real-time collaboration, and support for PlantUML and Structurizr."
+      content="Online diagram editor with live collaboration, multiple syntaxes, rich export controls, and code assistance."
     />
-    <meta name="twitter:image" content="https://pumler.github.io/pumler/assets/images/pumler-editor-dark.png" />
+    <meta name="twitter:image" content="https://pumler.github.io/pumler/assets/images/pumler-editor-light.png" />
 
     <link rel="icon" type="image/svg+xml" href="assets/brand/pumler-mark.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,12 +56,12 @@
           "priceCurrency": "USD"
         },
         "featureList": [
-          "PlantUML online editor",
+          "Live collaboration",
+          "PlantUML editor",
           "Structurizr editor",
-          "C4 model editing",
-          "Sequence diagram online editing",
-          "Real-time collaboration",
-          "Live preview"
+          "C4 model editor",
+          "Rich export PNG/SVG/Copy",
+          "Syntax highlighting and completion"
         ]
       }
     </script>
@@ -75,45 +75,45 @@
         window.posthog = e;
         e._i = [];
         e.init = function (i, s, a) {
-          function g(t, e) {
-            var o = e.split(".");
-            if (o.length === 2) {
-              t = t[o[0]];
-              e = o[1];
+          function g(t2, e2) {
+            var o2 = e2.split('.');
+            if (o2.length === 2) {
+              t2 = t2[o2[0]];
+              e2 = o2[1];
             }
-            t[e] = function () {
-              t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+            t2[e2] = function () {
+              t2.push([e2].concat(Array.prototype.slice.call(arguments, 0)));
             };
           }
-          p = t.createElement("script");
-          p.type = "text/javascript";
+          p = t.createElement('script');
+          p.type = 'text/javascript';
           p.async = true;
-          p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js";
-          o = t.getElementsByTagName("script")[0];
+          p.src = s.api_host.replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.js';
+          o = t.getElementsByTagName('script')[0];
           o.parentNode.insertBefore(p, o);
           var r = e;
           if (a !== undefined) {
             r = e[a] = [];
           } else {
-            a = "posthog";
+            a = 'posthog';
           }
           r.people = r.people || [];
-          r.toString = function (t) {
-            var e = "posthog";
-            if (a !== "posthog") {
-              e += "." + a;
+          r.toString = function (t3) {
+            var e3 = 'posthog';
+            if (a !== 'posthog') {
+              e3 += '.' + a;
             }
-            if (!t) {
-              e += " (stub)";
+            if (!t3) {
+              e3 += ' (stub)';
             }
-            return e;
+            return e3;
           };
           r.people.toString = function () {
-            return r.toString(1) + ".people (stub)";
+            return r.toString(1) + '.people (stub)';
           };
           n =
-            "capture identify alias people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user register register_once unregister opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing reset isFeatureEnabled onFeatureFlags reloadFeatureFlags group setPersonProperties".split(
-              " "
+            'capture identify alias people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user register register_once unregister opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing reset isFeatureEnabled onFeatureFlags reloadFeatureFlags group setPersonProperties'.split(
+              ' '
             );
           for (var l = 0; l < n.length; l += 1) {
             g(r, n[l]);
@@ -121,9 +121,10 @@
           e._i.push([i, s, a]);
         };
       })(document, window.posthog || []);
-      window.posthog.init("phc_tGRvHp7YSaGsgCVmbVvRVHvzs8lyykLJGqfsvcKKIFe", {
-        api_host: "https://eu.i.posthog.com",
-        person_profiles: "identified_only"
+
+      window.posthog.init('phc_tGRvHp7YSaGsgCVmbVvRVHvzs8lyykLJGqfsvcKKIFe', {
+        api_host: 'https://eu.i.posthog.com',
+        person_profiles: 'identified_only'
       });
     </script>
   </head>
@@ -135,10 +136,10 @@
           <span class="brand-name">Pumler</span>
         </a>
         <nav class="nav" aria-label="Main navigation">
-          <a class="link-muted" href="#themes">Themes</a>
-          <a class="link-muted" href="#live-collab">Live demo</a>
-          <a class="link-muted" href="#faq">FAQ</a>
-          <a class="link-muted" href="https://github.com/pumler/pumler/issues">Public issues</a>
+          <a class="link-muted" href="#features">Features</a>
+          <a class="link-muted" href="#security">Security</a>
+          <a class="link-muted" href="#roadmap">Roadmap</a>
+          <a class="link-muted" href="https://github.com/pumler/pumler/issues">Issues</a>
           <a class="btn btn-primary" href="https://pumler.com">Try now</a>
         </nav>
       </div>
@@ -151,8 +152,8 @@
             <p class="eyebrow">For Architects And Tech Leads</p>
             <h1>Collaborative text-to-diagram editor with live preview.</h1>
             <p>
-              Pumler is built for fast architecture communication: PlantUML, Structurizr, C4 workflows,
-              sequence diagrams online, and real-time collaboration in one editor.
+              Pumler is an online workspace for PlantUML and Structurizr (C4): real-time collaboration,
+              multiple syntaxes, rich export options, and fast editing ergonomics.
             </p>
             <div class="hero-cta">
               <a class="btn btn-primary" href="https://pumler.com">Try now</a>
@@ -160,82 +161,86 @@
             </div>
           </div>
           <div class="hero-panel">
-            <img src="assets/images/pumler-editor-dark.png" alt="Pumler editor in dark theme with live preview" />
+            <img src="assets/images/pumler-editor-light.png" alt="Pumler editor in light theme" />
           </div>
         </div>
       </section>
 
-      <section class="section" id="themes">
+      <section class="section" id="features">
         <div class="container">
-          <h2>Dark and light themes out of the box</h2>
+          <h2>Core capabilities in one workflow</h2>
           <p class="section-intro">
-            Switch depending on your workflow and environment. Both themes are first-class, not an afterthought.
+            Everything below is available today and focused on real diagram authoring in teams.
           </p>
-          <div class="theme-shots">
-            <figure class="shot-card">
-              <img src="assets/images/pumler-editor-dark.png" alt="Pumler editor in dark theme" loading="lazy" />
-              <figcaption>Dark theme</figcaption>
-            </figure>
-            <figure class="shot-card">
-              <img src="assets/images/pumler-editor-light.png" alt="Pumler editor in light theme" loading="lazy" />
-              <figcaption>Light theme</figcaption>
-            </figure>
+          <div class="capabilities-grid">
+            <article class="feature-card">
+              <div class="feature-content">
+                <h3>Live collaboration</h3>
+                <p>Edit one diagram together in real time instead of sharing stale screenshots and copies.</p>
+              </div>
+              <div class="feature-media">
+                <video class="demo-video" autoplay loop muted playsinline poster="assets/images/pumler-editor-light.png">
+                  <source src="assets/media/live-collaboration.webm" type="video/webm" />
+                </video>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-content">
+                <h3>Multiple syntaxes</h3>
+                <p>
+                  Use PlantUML and Structurizr in one editor. Mermaid support is next. Command palette makes switching
+                  fast when you move between sequence diagrams and C4 views.
+                </p>
+              </div>
+              <div class="feature-media">
+                <img src="assets/images/feature-command-palette-light.png" alt="Command palette for PlantUML and Structurizr" loading="lazy" />
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-content">
+                <h3>Rich export controls</h3>
+                <p>
+                  Export as SVG or PNG, copy image to clipboard, choose theme, toggle background, and use upscale presets
+                  including x2 and x4 for documentation-quality output.
+                </p>
+              </div>
+              <div class="feature-media">
+                <img src="assets/images/feature-export-controls-light.png" alt="Export controls for PNG, SVG and copy" loading="lazy" />
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-content">
+                <h3>Syntax highlight and code completion</h3>
+                <p>Readable syntax colors plus inline suggestions keep editing fast and reduce small DSL mistakes.</p>
+              </div>
+              <div class="feature-media">
+                <img src="assets/images/feature-completion-light.png" alt="Syntax highlighting and completion in editor" loading="lazy" />
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="why">
+      <section class="section" id="security">
         <div class="container">
-          <h2>Why another diagram editor?</h2>
-          <p class="section-intro">
-            Text-to-diagram is fast and maintainable, but teams still need collaboration, stable links, and a cleaner
-            lifecycle around architecture diagrams. Pumler focuses on that gap.
-          </p>
-          <div class="cards">
-            <article class="card">
-              <h3>Live collaboration</h3>
-              <p>Edit together in real time instead of passing screenshots and stale copies.</p>
-            </article>
-            <article class="card">
-              <h3>Multiple syntaxes</h3>
-              <p>Use PlantUML and Structurizr in one place. Mermaid is planned next.</p>
-            </article>
-            <article class="card">
-              <h3>Live preview</h3>
-              <p>See rendering changes instantly while writing source text.</p>
-            </article>
-            <article class="card">
-              <h3>Free core</h3>
-              <p>Core editing remains free; advanced capabilities may become paid later.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="syntax">
-        <div class="container">
-          <h2>Built for PlantUML and Structurizr</h2>
-          <p class="section-intro">
-            Use Pumler as a PlantUML online editor, Structurizr online editor, and C4 model online workspace for
-            architecture documentation.
-          </p>
-          <div class="badges" aria-label="Supported keywords">
-            <span class="badge">PlantUML online editor</span>
-            <span class="badge">Structurizr online editor</span>
-            <span class="badge">C4 model online editor</span>
-            <span class="badge">Sequence diagram online</span>
-            <span class="badge">Real-time collaborative diagram editor</span>
-          </div>
+          <h2>Current security snapshot</h2>
+          <ul class="simple-list">
+            <li>HTTPS for web traffic.</li>
+            <li>WSS and WebRTC transport for collaboration.</li>
+            <li>Diagrams are currently not stored on the server.</li>
+          </ul>
         </div>
       </section>
 
       <section class="section" id="roadmap">
         <div class="container">
-          <h2>Roadmap without calendar noise</h2>
-          <p class="section-intro">Focused delivery over date promises.</p>
-          <div class="roadmap">
+          <h2>Roadmap</h2>
+          <div class="roadmap-grid">
             <article class="card">
-              <h3>Coming Soon</h3>
+              <h3>Coming soon</h3>
               <ul>
                 <li>Mermaid support</li>
                 <li>User accounts</li>
@@ -244,10 +249,10 @@
               </ul>
             </article>
             <article class="card">
-              <h3>Enterprise Direction</h3>
+              <h3>Enterprise direction</h3>
               <ul>
                 <li>SSO/SAML</li>
-                <li>RBAC and team permissions</li>
+                <li>RBAC and permissions</li>
                 <li>Audit logs</li>
                 <li>Private workspaces</li>
                 <li>API and webhooks</li>
@@ -258,87 +263,22 @@
         </div>
       </section>
 
-      <section class="section" id="live-collab">
-        <div class="container media-layout">
-          <div>
-            <h2>Live collaboration demo</h2>
-            <p class="section-intro">
-              A short clip works well here because collaboration is easiest to trust when people can see it in motion.
-            </p>
-            <ul class="security media-specs">
-              <li>Recommended length: 6 to 10 seconds.</li>
-              <li>Format: WebM or MP4 for landing, GIF fallback for README.</li>
-              <li>Scenario: two cursors, one edit, instant preview update, share action.</li>
-            </ul>
+      <section class="section section-cta">
+        <div class="container cta-wrap">
+          <h2>Build diagrams as code, together.</h2>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://pumler.com">Try now</a>
+            <a class="btn" href="https://github.com/pumler/pumler/issues">Open issue</a>
           </div>
-          <div class="media-card" aria-label="Live collaboration demo placeholder">
-            <video class="demo-video" autoplay loop muted playsinline poster="assets/images/pumler-editor-dark.png">
-              <source src="assets/media/live-collaboration.webm" type="video/webm" />
-            </video>
-            <p class="media-note">
-              Two browser windows editing one shared diagram in real time.
-              <a href="assets/media/live-collaboration.webm">Open clip</a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="security">
-        <div class="container">
-          <h2>Current security posture</h2>
-          <ul class="security">
-            <li>HTTPS for web traffic.</li>
-            <li>WSS for real-time transport.</li>
-            <li>WebRTC peer-to-peer collaboration path.</li>
-            <li>Diagrams are currently not stored on the server.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section" id="faq">
-        <div class="container">
-          <h2>FAQ</h2>
-          <dl class="faq">
-            <div class="qa">
-              <dt>Is Pumler free?</dt>
-              <dd>Core editing is free forever. Some advanced features may become paid later.</dd>
-            </div>
-            <div class="qa">
-              <dt>Is Pumler open source?</dt>
-              <dd>Not yet. Product feedback and requests are public through GitHub issues.</dd>
-            </div>
-            <div class="qa">
-              <dt>Does Pumler support sequence diagrams online?</dt>
-              <dd>Yes, via PlantUML with live preview.</dd>
-            </div>
-            <div class="qa">
-              <dt>Can I edit C4 diagrams online?</dt>
-              <dd>Yes, Structurizr syntax is supported today.</dd>
-            </div>
-            <div class="qa">
-              <dt>Do I need to install anything?</dt>
-              <dd>No. It works in the browser.</dd>
-            </div>
-            <div class="qa">
-              <dt>Where do I send feedback?</dt>
-              <dd>
-                Use <a href="https://github.com/pumler/pumler/issues">github.com/pumler/pumler/issues</a> or email
-                <a href="mailto:info@pumler.com">info@pumler.com</a>.
-              </dd>
-            </div>
-          </dl>
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <div class="container footer-inner">
-        <p>Pumler. Minimal. Fast. Collaborative.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="https://pumler.com">Try now</a>
-          <a class="btn" href="https://github.com/pumler/pumler/issues">Open issue</a>
-        </div>
+        <p>Pumler. Minimal. Efficient. Elegant.</p>
       </div>
     </footer>
   </body>
 </html>
+  

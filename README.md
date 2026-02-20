@@ -4,114 +4,85 @@
 
 [Try now](https://pumler.com) · [Public issues](https://github.com/pumler/pumler/issues) · [Contact](mailto:info@pumler.com)
 
-## Why Pumler
+## What Pumler Solves
 
-Pumler is built for architects and tech leads who need fast, reliable diagramming workflows in real teams.
+Pumler is built for architects and tech leads who prefer text-to-diagram workflows, but need modern collaboration and sharing capabilities in the same place.
 
-- Real-time collaboration for text-based diagrams
-- Live preview while you edit
-- Multiple syntaxes in one editor (PlantUML and Structurizr today)
-- Free core experience for everyday diagram editing
+## Core Capabilities
 
-## Why Another Diagram Editor?
+### Live collaboration
 
-Text-to-diagram workflows are one of the fastest ways to create and maintain technical diagrams. They are easier to version, review, and update than drag-and-drop canvases.
-
-But modern teams still need collaboration, permanent links, and better lifecycle support around those diagrams. Pumler focuses on closing that gap.
-
-## Theme Preview
-
-Dark theme:
-
-![Pumler dark theme](docs/assets/images/pumler-editor-dark.png)
-
-Light theme:
-
-![Pumler light theme](docs/assets/images/pumler-editor-light.png)
-
-## Live Collaboration Demo
-
-Short clip showing two browser windows editing one shared diagram in real time.
+Edit one diagram together in real time.
 
 ![Live collaboration demo](docs/assets/media/live-collaboration.gif)
 
-Landing clip: `docs/assets/media/live-collaboration.webm`
+### Multiple syntaxes
 
-## What You Can Do Today
+Use PlantUML and Structurizr in one editor. Mermaid support is coming next.
 
-- Create and edit diagrams online with instant rendering
-- Work in PlantUML and Structurizr syntax
-- Collaborate in real time
-- Share diagrams quickly with your team
+![Command palette for multiple syntaxes](docs/assets/images/feature-command-palette-light.png)
 
-## Supported Diagram Syntaxes
+### Rich export controls
 
-- PlantUML
-- Structurizr (C4)
+Export as SVG or PNG, copy image to clipboard, select theme, toggle background, and use upscale presets (including x2 and x4).
 
-More syntaxes are planned.
+![Export controls screenshot](docs/assets/images/feature-export-controls-light.png)
+
+### Syntax highlight and code completion
+
+Readable syntax colors and inline completion help reduce small DSL mistakes while editing.
+
+![Syntax highlight and completion screenshot](docs/assets/images/feature-completion-light.png)
+
+## Security Snapshot
+
+- HTTPS for web traffic
+- WSS and WebRTC transport for collaboration
+- Diagrams are currently **not stored on the server**
 
 ## Roadmap
 
-### Coming Soon
+### Coming soon
 
 - Mermaid support
-- User account workspace
+- User accounts
 - Diagram version history
 - Permanent links
 
-### Enterprise Direction
+### Enterprise direction
 
 - SSO/SAML
-- RBAC (roles and permissions)
+- RBAC and permissions
 - Audit logs
-- Private team workspaces
+- Private workspaces
 - API and webhooks
-- Self-hosted / on-prem option
-
-## Current Security Posture
-
-- HTTPS for web traffic
-- WSS and WebRTC-based peer-to-peer for collaboration transport
-- Diagrams are currently **not stored on the server**
+- Self-hosted option
 
 ## FAQ
 
 ### Is Pumler free?
 
-Core editing and collaboration stays free. Some advanced capabilities may move to paid plans over time.
+Core editing is free forever. Some advanced capabilities may move to paid plans over time.
 
 ### Is Pumler open source?
 
-Not yet. Pumler is actively developed, with public issue tracking and feedback on GitHub.
-
-### Who is Pumler for?
-
-Architects, tech leads, and teams using text-based diagrams in documentation and architecture workflows.
+Not yet. Product feedback and feature requests are public via GitHub issues.
 
 ### Does Pumler support C4 diagrams?
 
-Yes. Pumler supports Structurizr syntax, including C4-style workflows.
+Yes. Structurizr syntax is supported today.
 
 ### Does Pumler support sequence diagrams online?
 
-Yes. Pumler supports PlantUML sequence diagrams with live preview.
-
-### Will you add Mermaid?
-
-Yes, Mermaid support is on the roadmap.
+Yes. PlantUML sequence diagrams are supported with live preview.
 
 ### Do I need to install anything?
 
 No. Pumler runs in the browser.
 
-### Where do I report bugs or request features?
+## Feedback
 
-Use [GitHub Issues](https://github.com/pumler/pumler/issues).
-
-## Feedback And Contribution
-
-We welcome product feedback, feature ideas, and bug reports via [GitHub Issues](https://github.com/pumler/pumler/issues).
+We welcome feature ideas and bug reports via [GitHub Issues](https://github.com/pumler/pumler/issues).
 
 ## Contact
 
