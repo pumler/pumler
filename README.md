@@ -17,7 +17,7 @@ Pumler is built for architects and tech leads who need fast, reliable diagrammin
 
 Text-to-diagram workflows are one of the fastest ways to create and maintain technical diagrams. They are easier to version, review, and update than drag-and-drop canvases.
 
-But modern teams still need collaboration, durable links, and better lifecycle support around those diagrams. Pumler focuses on closing that gap.
+But modern teams still need collaboration, permanent links, and better lifecycle support around those diagrams. Pumler focuses on closing that gap.
 
 ## Theme Preview
 
@@ -51,7 +51,7 @@ Landing clip: `docs/assets/media/live-collaboration.webm`
 
 More syntaxes are planned.
 
-## Roadmap (No Dates)
+## Roadmap
 
 ### Coming Soon
 
@@ -72,17 +72,14 @@ More syntaxes are planned.
 ## Current Security Posture
 
 - HTTPS for web traffic
-- WSS for collaboration transport
-- WebRTC-based peer-to-peer collaboration path
+- WSS and WebRTC-based peer-to-peer for collaboration transport
 - Diagrams are currently **not stored on the server**
-
-Security and compliance coverage will expand over time.
 
 ## FAQ
 
 ### Is Pumler free?
 
-Core editing stays free. Some advanced capabilities may move to paid plans over time.
+Core editing and collaboration stays free. Some advanced capabilities may move to paid plans over time.
 
 ### Is Pumler open source?
 
@@ -120,10 +117,3 @@ We welcome product feedback, feature ideas, and bug reports via [GitHub Issues](
 
 - Email: [info@pumler.com](mailto:info@pumler.com)
 - GitHub: [github.com/pumler/pumler](https://github.com/pumler/pumler)
-
-## GitHub Pages Landing Source
-
-Landing page files are in [`docs/`](docs/):
-
-- [`docs/index.html`](docs/index.html)
-- [`docs/styles.css`](docs/styles.css)
