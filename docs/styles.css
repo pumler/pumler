@@ -277,6 +277,27 @@ h3 {
   gap: 14px;
 }
 
+.diagram-grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.diagram-summary {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.diagram-list {
+  margin: 14px 0 0;
+  color: var(--text);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1.72;
+  word-break: break-word;
+}
+
 .faq-list {
   margin: 24px 0 0;
   padding: 0;
@@ -350,7 +371,8 @@ h3 {
 @media (max-width: 1040px) {
   .hero-grid,
   .capabilities-grid,
-  .roadmap-grid {
+  .roadmap-grid,
+  .diagram-grid {
     grid-template-columns: 1fr;
   }
 

@@ -1,6 +1,6 @@
 # Pumler
 
-**Real-time collaborative text-to-diagram editor for PlantUML and Structurizr.**
+**Real-time collaborative text-to-diagram editor for PlantUML, Mermaid, and Structurizr.**
 
 [Try now](https://pumler.com) · [Public issues](https://github.com/pumler/pumler/issues) · [Contact](mailto:info@pumler.com)
 
@@ -18,9 +18,23 @@ Edit one diagram together in real time.
 
 ### Multiple syntaxes
 
-Use PlantUML and Structurizr in one editor. Mermaid support is coming next.
+Use PlantUML, Mermaid, and Structurizr in one editor.
 
 ![Command palette for multiple syntaxes](docs/assets/images/feature-command-palette-light.png)
+
+## Supported Diagram Types
+
+### PlantUML
+
+`sequence`, `usecase`, `class`, `object`, `activity`, `component`, `deployment`, `state`, `timing`, `archimate`, `mindmap`, `wbs`, `json`, `yaml`, `er`, `nwdiag`
+
+### Structurizr
+
+`systemContext`, `container`, `component`, `deployment`
+
+### Mermaid
+
+`flowchart`, `sequence`, `class`, `er`, `journey`, `gantt`, `pie`, `quadrant`, `requirement`, `gitgraph`, `c4`, `mindmap`, `timeline`, `sankey`, `xychart`, `block`, `packet`, `kanban`, `architecture`, `radar`, `treemap`
 
 ### Rich export controls
 
@@ -44,7 +58,6 @@ Readable syntax colors and inline completion help reduce small DSL mistakes whil
 
 ### Coming soon
 
-- Mermaid support
 - User accounts
 - Diagram version history
 - Permanent links
@@ -70,11 +83,15 @@ Not yet. Product feedback and feature requests are public via GitHub issues.
 
 ### Does Pumler support C4 diagrams?
 
-Yes. Structurizr syntax is supported today.
+Yes. Structurizr is supported today, and Mermaid `c4` is supported as well.
 
 ### Does Pumler support sequence diagrams online?
 
-Yes. PlantUML sequence diagrams are supported with live preview.
+Yes. Sequence diagrams are supported in both PlantUML and Mermaid with live preview.
+
+### Does Pumler support Mermaid?
+
+Yes. Mermaid support is available today, including flowcharts, sequence diagrams, ER diagrams, Gantt charts, C4, Kanban, timelines, Sankey, treemaps, and more.
 
 ### Do I need to install anything?
 
